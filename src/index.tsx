@@ -1,16 +1,13 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import './index.css';
-const logo = require('./logo.svg');
+import SectionGrid from './components/SectionGrid';
 
-const App = () => (
-  <div className="App">
-    <img className="App-logo" src={logo} alt="React" />
-    <h1 className="App-Title">Hello Parcel x React x TypeScript</h1>
-  </div>
+const stories = [];
+
+ReactDOM.render(
+  <SectionGrid section="News" stories={stories} />,
+  document.getElementById('root')
 );
-
-ReactDOM.render(<App />, document.getElementById('root'));
 
 //Hot Module Replacement
 if (module.hot) {
