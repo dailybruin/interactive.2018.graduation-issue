@@ -6,6 +6,7 @@ import glamorous, {ThemeProvider} from 'glamorous';
 import './index.css';
 
 import { H1 } from 'glamorous';
+import YearMarker from '@/components/yearMarkers/yearMarker';
 
 class App extends React.Component<{}, {}> {
     render() {
@@ -15,6 +16,7 @@ class App extends React.Component<{}, {}> {
                     id="gradIssueH1">
                     graduation issue
                 </H1>
+                <YearMarker year='2014' />
                 <Timeline />
             </div>
         )

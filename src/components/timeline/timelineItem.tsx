@@ -1,6 +1,6 @@
 import * as React from 'react';
 import glamorous, {ThemeProvider} from 'glamorous';
-
+import './timelineItem.css';
 import { Figure, Figcaption, H1 } from 'glamorous';
 import TimelineCaption from './timelineCaption';
 
@@ -23,7 +23,8 @@ class TimelineItem extends React.Component<ItemProps, {}> {
         return (
             <div className='timelineItem'>
                 <H1
-                    color={this.props.borderColor}>
+                    color={this.props.borderColor}
+                    className="timelineH1">
                     {this.props.headline}
                 </H1>
                 <Figure 
