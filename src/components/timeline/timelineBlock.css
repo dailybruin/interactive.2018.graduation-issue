@@ -1,0 +1,63 @@
+#timeline {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#timeline::before {
+    /* this is the vertical line */
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 12px;
+    background: #C8C8C8;
+  }
+
+.timelineBlock {
+    display: flex;
+    width: 45%;
+    position: relative;
+}
+
+.timelineArm {
+    display: flex;
+    flex-direction: column;
+}
+
+.armDate {
+    font-weight: 800;
+    font-style: italic;
+    text-transform: uppercase;
+    font-size: 24px;
+}
+
+#timeline .timelineBlock:nth-child(even) .timelineItem h1 {
+    text-align: left;
+}
+
+#timeline .timelineBlock:nth-child(even) {
+    flex-direction: row;
+    left: 49.3%;
+}
+
+#timeline .timelineBlock:nth-child(even) .timelineArm {
+    padding-right: 1.4rem;
+}
+
+#timeline .timelineBlock:nth-child(odd) .timelineItem h1 {
+    text-align: right;
+}
+
+#timeline .timelineBlock:nth-child(odd) {
+    flex-direction: row-reverse;
+    left: 6.9%;
+}
+
+#timeline .timelineBlock:nth-child(odd) .timelineArm {
+    padding-left: 1.4rem;
+}
+
+#timeline .timelineBlock:nth-child(1) {
+    margin-top: 2em;
+}
