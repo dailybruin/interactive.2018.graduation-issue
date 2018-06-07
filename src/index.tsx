@@ -1,12 +1,13 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import SectionGrid from './components/SectionGrid';
-import Timeline from '@/components/timeline/timeline';
-
+import NavigationBar from './components/NavigationBar';
 import glamorous, {ThemeProvider} from 'glamorous';
-import './index.css';
 
 import { H1 } from 'glamorous';
+import Timeline from '@/components/timeline/timeline';
+import './index.css';
+
 import YearMarker from '@/components/yearMarkers/yearMarker';
 
 class App extends React.Component<{}, {}> {

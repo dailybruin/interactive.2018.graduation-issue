@@ -28,3 +28,5 @@ const NavigationBar = () => (
     </nav>
   </div>
 );
+
+export default NavigationBar;
