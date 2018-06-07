@@ -1,11 +1,17 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Link } from '@reach/router';
+import glamorous, {ThemeProvider} from 'glamorous';
+
+import { H1 } from 'glamorous';
 
 const NavigationBar = () => (
   <div>
     <img src="" alt="Log" />
-    <h1>Graduation Issue</h1>
+    <H1
+        id="gradIssueH1">
+        graduation issue
+    </H1>
     <div>line</div>
     <nav>
       <Link>News</Link>

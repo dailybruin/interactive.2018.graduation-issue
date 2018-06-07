@@ -12,6 +12,8 @@ class Timeline extends React.Component<{}, {}> {
             <div id="timeline">
                 <TimelineBlock color='#FFFCE1'/>
                 <TimelineBlock color='#FFFCE1'/>
+                <TimelineBlock color='#FFFCE1'/>
+                <TimelineBlock color='#FFFCE1'/>
             </div>
         )
     }
