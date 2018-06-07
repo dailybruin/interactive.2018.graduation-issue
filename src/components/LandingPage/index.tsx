@@ -9,7 +9,7 @@ function LandingPage() {
     return (
         <div id="landingDiv">
             <div id="landingSvg">
-                <svg width="20%" height="40%" viewBox="0 0 377 437" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="25%" height="45%" viewBox="0 0 377 437" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 0H65.5" transform="translate(0 20)" stroke="white" strokeWidth="4"/>
                     <path d="M0 0H65.5" transform="translate(311 20)" stroke="white" strokeWidth="4"/>
                     <path d="M0 0H377" transform="translate(0 435)" stroke="white" strokeWidth="4"/>
