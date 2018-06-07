@@ -14,7 +14,7 @@ function NavigationBar() {
                 id="gradIssueH1">
                 graduation issue
             </H1>
-            <nav>
+            <nav id="nav">
                 <Link to="">News</Link>
                 <Link to="">Sports</Link>
                 <Link to="">Arts</Link>
