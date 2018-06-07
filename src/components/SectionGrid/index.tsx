@@ -5,7 +5,7 @@ export default function SectionGrid(section, stories) {
   const gridItems = stories.map(story => (
     <article>
       <figure>
-        <img src="{story.image}" alt="{story.alt}" />
+        <img src={story.image} alt={story.alt} />
         <figcaption>{story.credits}</figcaption>
       </figure>
       <h1>{story.headline}</h1>
