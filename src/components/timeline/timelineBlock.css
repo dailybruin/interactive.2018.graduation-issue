@@ -49,6 +49,10 @@
     padding-right: 1.4rem;
 }
 
+#timeline .timelineBlock:nth-child(even) .timelineArm svg {
+    transform: rotateY(180deg);
+}
+
 #timeline .timelineBlock:nth-child(odd) .timelineItem h1 {
     text-align: right;
 }
