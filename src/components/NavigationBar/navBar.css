@@ -1,0 +1,16 @@
+#navbar {
+    width: 90%;
+    text-align: right;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav a {
+    padding-left: 2em;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
