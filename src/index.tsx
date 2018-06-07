@@ -1,8 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import SectionGrid from './components/SectionGrid';
-import NavigationBar from './components/NavigationBar';
 import glamorous, {ThemeProvider} from 'glamorous';
+import LandingPage from '@/components/LandingPage';
 
 import { H1 } from 'glamorous';
 import Timeline from '@/components/timeline/timeline';
@@ -14,10 +14,7 @@ class App extends React.Component<{}, {}> {
     render() {
         return (
             <div id="App">
-                <H1
-                    id="gradIssueH1">
-                    graduation issue
-                </H1>
+                <LandingPage />
                 <YearMarker year='2014' />
                 <Timeline />
             </div>

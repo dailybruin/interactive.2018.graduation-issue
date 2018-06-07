@@ -2,31 +2,33 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Link } from '@reach/router';
 import glamorous, {ThemeProvider} from 'glamorous';
+import './navBar.css';
 
 import { H1 } from 'glamorous';
 
-const NavigationBar = () => (
-  <div>
-    <img src="" alt="Log" />
-    <H1
-        id="gradIssueH1">
-        graduation issue
-    </H1>
-    <div>line</div>
-    <nav>
-      <Link>News</Link>
-      <Link>Sports</Link>
-      <Link>Arts</Link>
-      <Link>Opinion</Link>
-      <Link>Photo</Link>
-      <Link>Illustrations</Link>
-      <Link>Graphics</Link>
-      <Link>Video</Link>
-      <Link>Prime</Link>
-      <Link>The Quad</Link>
-      <Link>-30-</Link>
-    </nav>
-  </div>
-);
+function NavigationBar() {
+    return (
+        <div id="navbar">
+            <img src="" alt="" />
+            <H1
+                id="gradIssueH1">
+                graduation issue
+            </H1>
+            <nav>
+                <Link to="">News</Link>
+                <Link to="">Sports</Link>
+                <Link to="">Arts</Link>
+                <Link to="">Opinion</Link>
+                <Link to="">Photo</Link>
+                <Link to="">Illustrations</Link>
+                <Link to="">Graphics</Link>
+                <Link to="">Video</Link>
+                <Link to="">Prime</Link>
+                <Link to="">The Quad</Link>
+                <Link to="">-30-</Link>
+            </nav>
+        </div>
+    );
+};
 
 export default NavigationBar;
