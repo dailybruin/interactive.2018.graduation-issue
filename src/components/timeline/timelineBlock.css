@@ -1,0 +1,4 @@
+.timelineBlock {
+    display: flex;
+    flex-direction: row-reverse;
+}

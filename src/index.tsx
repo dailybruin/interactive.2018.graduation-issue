@@ -1,14 +1,25 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import './index.css';
-const logo = require('./logo.svg');
+import Timeline from '@/components/timeline/timeline';
 
-const App = () => (
-  <div className="App">
-    <img className="App-logo" src={logo} alt="React" />
-    <h1 className="App-Title">Hello Parcel x React x TypeScript</h1>
-  </div>
-);
+import glamorous, {ThemeProvider} from 'glamorous';
+import './index.css';
+
+import { H1 } from 'glamorous';
+
+class App extends React.Component<{}, {}> {
+    render() {
+        return (
+            <div id="App">
+                <H1
+                    id="gradIssueH1">
+                    graduation issue
+                </H1>
+                <Timeline />
+            </div>
+        )
+    }
+};
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
