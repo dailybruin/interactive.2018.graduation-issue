@@ -80,7 +80,7 @@
     AFTER (on the right side of) the item */
 #timeline .timelineBlock:nth-child(odd) {
     flex-direction: row-reverse;
-    left: 10%;
+    left: 9%;
 }
 
 /*  Each arm needs to "push" the item away a little bit for design purposes
