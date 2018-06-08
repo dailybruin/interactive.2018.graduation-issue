@@ -61,3 +61,8 @@
 .imageCredits {
     text-align: right;
 }
+
+/*  This is the author's name and we give it a little padding */
+.articleItem h2 {
+    padding: 0.5em 1em;
+}
