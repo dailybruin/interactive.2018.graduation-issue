@@ -15,19 +15,28 @@ class TimelineCaption extends React.Component<{}, {}> {
         this.renderMovie = this.renderMovie.bind(this);
     }
 
-    private renderArticle(): void {
-
+    private renderArticle(): JSX.Element {
+        return (
+            <div className="articleItem itemCaption">
+                <div className="imageCredits">
+                    ({this.props.credits})
+                </div>
+                <H2 >
+                    By {this.props.author}
+                </H2>
+            </div>  
+        );
     }
 
     private renderSong(): JSX.Element {
         return (
-            <div className="songItem">
+            <div className="songItem itemCaption">
                 <H2 >
                     {this.props.song}
                 </H2>
                 {this.props.artist}
             </div>
-        )
+        );
     }
 
     private renderMovie(): void {
@@ -37,8 +46,8 @@ class TimelineCaption extends React.Component<{}, {}> {
     render(): any {
         if (this.props.song) {
             return this.renderSong();
-        } else if (this.props.headline) {
-            return this.renderSong();
+        } else if (this.props.author) {
+            return this.renderArticle();
         } else if (this.props.movieTitle) {
             return this.renderMovie();
         }

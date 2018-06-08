@@ -15,8 +15,10 @@ class App extends React.Component<{}, {}> {
         return (
             <div id="App">
                 <LandingPage />
-                <YearMarker year='2014' />
-                <Timeline />
+                <div id="t2014">
+                    <YearMarker year='2014' />
+                    <Timeline />
+                </div>
             </div>
         )
     }
