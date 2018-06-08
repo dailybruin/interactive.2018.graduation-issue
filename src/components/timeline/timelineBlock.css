@@ -42,7 +42,7 @@
 
 #timeline .timelineBlock:nth-child(even) {
     flex-direction: row;
-    left: 49.3%;
+    left: 48%;
 }
 
 #timeline .timelineBlock:nth-child(even) .timelineArm {
@@ -59,7 +59,7 @@
 
 #timeline .timelineBlock:nth-child(odd) {
     flex-direction: row-reverse;
-    left: 6.9%;
+    left: 10%;
 }
 
 #timeline .timelineBlock:nth-child(odd) .timelineArm {
@@ -67,7 +67,7 @@
 }
 
 #timeline .timelineBlock:nth-child(1) {
-    margin-top: 2em;
+    padding-top: 2em;
 }
 
 .timelineBlock .timelineItem--bounce-in {
