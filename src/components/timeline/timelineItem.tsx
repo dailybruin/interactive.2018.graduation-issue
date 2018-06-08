@@ -32,7 +32,11 @@ class TimelineItem extends React.Component<ItemProps, {}> {
                     backgroundColor='rgba(242, 242, 242, 0.17)'>
                     <img src={this.props.imgSrc}/>
                     <Figcaption>
-                        <TimelineCaption song={this.props.song} artist={this.props.artist}/>
+                        <TimelineCaption 
+                            song={this.props.song} 
+                            artist={this.props.artist} 
+                            author={this.props.author} 
+                            credits={this.props.credits}/>
                     </Figcaption>
                 </Figure>
             </div>

@@ -1,13 +1,22 @@
+/*
+=== THESE STYLINGS ARE FOR THE NAVBAR INSIDE THE LANDING PAGE
+*/
+
+/*  This contains the title "graduation issue" as well as the actual
+    nav elements to section content */
 #navbar {
     width: 90%;
     text-align: right;
 }
 
+/*  This is the div containing all the nav links to sections.
+    We use flex-end to right-align to the title basically */
 nav {
     display: flex;
     justify-content: flex-end;
 }
 
+/*  These are the actual links to sections */
 nav a {
     padding-left: 2em;
     text-decoration: none;
@@ -15,6 +24,9 @@ nav a {
     color: white;
 }
 
+/*  These are mobile stylings
+    1010px was chosen because that is the exact value the items start to
+    mess with the sides */
 @media only screen and (max-width: 1010px) {
     nav {
         flex-direction: column;
