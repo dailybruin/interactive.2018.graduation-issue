@@ -81,6 +81,13 @@ landingMobile = () => {
             navbar.style.zIndex = '3';
             navbar.style.backgroundImage = 'inherit';
             navbar.style.position = 'fixed';
+        } else {
+            nav.style.display = 'flex';
+            landingDiv.style.justifyContent = 'center';
+            navbar.style.backgroundImage = 'initial';
+            navbar.style.position = 'static';
+            navbar.style.width = '90%';
+            navbar.style.textAlign = 'right';
         }
     });
 
