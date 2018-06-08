@@ -69,7 +69,7 @@
     timeline */
 #timeline .timelineBlock:nth-child(even) {
     flex-direction: row;
-    left: 48%;
+    left: 48.4%;
 }
 
 /*  This style is why the blocks actually appear on different sides.
