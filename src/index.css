@@ -28,3 +28,9 @@ h1, h2, span {
 #t2014 {
     margin-top: 100vh;
 }
+
+@media only screen and (max-width: 1010px) {
+    #t2014 {
+        margin-top: 2em;
+    }
+}

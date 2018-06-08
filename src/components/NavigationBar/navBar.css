@@ -20,6 +20,7 @@ nav a {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        margin-top: 2em;
     }
     nav a {
         padding: .5em 2em;

@@ -5,6 +5,7 @@
     flex-direction: column;
     justify-content: center;
     position: fixed;
+    background-image: url('../../assets/bg.jpg');
 }
 
 #landingSvg {
@@ -12,6 +13,10 @@
 }
 
 @media only screen and (max-width: 1010px) {
+    #landingDiv {
+        position: static;
+        background-image: rgba(242, 242, 242, 0.17);
+    }
     #landingSvg {
         display: none;
     }
