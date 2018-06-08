@@ -22,7 +22,7 @@ class TimelineCaption extends React.Component<{}, {}> {
                     ({this.props.credits})
                 </div>
                 <H2 >
-                    By: {this.props.author}
+                    By {this.props.author}
                 </H2>
             </div>  
         );

@@ -209,6 +209,9 @@
     #timeline .timelineBlock:nth-child(odd) .timelineArm, #timeline .timelineBlock:nth-child(even) .timelineArm {
         padding-left: 0;
     }
+    #timeline .timelineBlock:nth-child(1) {
+        padding-top: 0;
+    }
     .timelineBlock {
         display: flex;
         width: 100%;

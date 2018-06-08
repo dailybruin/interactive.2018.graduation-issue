@@ -65,7 +65,30 @@ landing = () => {
     });
 };
 
+landingMobile = () => {
+    let navbar = document.getElementById('navbar');
+    let nav = document.getElementById('nav');
+    let landingDiv = document.getElementById('landingDiv');
+    
+    window.addEventListener('scroll', function(e) {
+        let s = window.scrollY;
+        if (s > 570) {
+            nav.style.display = 'none';
+            landingDiv.style.justifyContent = 'flex-start';
+            navbar.style.width = '100%';
+            navbar.style.textAlign = 'center';
+            navbar.style.padding = '0.5em 0';
+            navbar.style.zIndex = '3';
+            navbar.style.backgroundImage = 'inherit';
+            navbar.style.position = 'fixed';
+        }
+    });
+
+};
+
 if (window.innerWidth > 1010) {
     console.log(window);
     document.addEventListener("DOMContentLoaded", landing());
+} else {
+    document.addEventListener("DOMContentLoaded", landingMobile());
 }
