@@ -9,7 +9,7 @@ export interface Story {
   author: string;
   description: string;
   image: string;
-  'image-alt': string;
+  imagealt: string;
   link: string;
   section: string;
 }
