@@ -2,7 +2,7 @@ import * as React from 'react';
 import './landingPage.css';
 import NavigationBar from '../NavigationBar';
 
-const LandingSVG = require('@/assets/landing.svg');
+const LandingSVG = require('../../assets/landing.svg');
 
 function LandingPage() {
   return (

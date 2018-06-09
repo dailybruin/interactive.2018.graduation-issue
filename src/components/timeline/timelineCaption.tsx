@@ -1,7 +1,5 @@
 import * as React from 'react';
 
-import { h2 } from 'glamorous';
-
 class TimelineCaption extends React.Component<{}, {}> {
   props: any;
   constructor(props) {
