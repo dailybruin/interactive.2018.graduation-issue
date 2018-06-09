@@ -28,7 +28,7 @@
 @media only screen and (max-width: 1010px) {
     #landingDiv {
         position: static;
-        background-image: rgba(242, 242, 242, 0.17);
+        background-size: cover;
     }
     #landingSvg {
         display: none;
