@@ -1,15 +1,11 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import glamorous, { ThemeProvider } from 'glamorous';
 import './navBar.css';
-
-import { H1 } from 'glamorous';
 
 export default function NavigationBar() {
   return (
     <div id="navbar">
       <img src="" alt="" />
-      <H1 id="gradIssueH1">graduation issue</H1>
+      <h1 id="gradIssueH1">graduation issue</h1>
       <nav id="nav">
         <a href="">News</a>
         <a href="">Sports</a>
