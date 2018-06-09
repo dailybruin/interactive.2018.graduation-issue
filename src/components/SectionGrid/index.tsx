@@ -1,51 +1,25 @@
 import * as React from 'react';
 import { Div } from 'glamorous';
+import { Story } from '@/components/App';
 
-interface Story {
-  title: string;
-  author: string;
-  description: string;
-  image: string;
-  'image-alt': string;
-  link: string;
-  section: string;
-}
-
-interface SectionGridState {
-  sections: any[];
-  stories: Story[];
-}
-
-class SectionGrid extends React.Component<{}, SectionGridState> {
-  constructor(props) {
-    super(props);
-    this.state = { sections: [], stories: [] };
-  }
-
-  async componentDidMount() {
-    const response = await fetch(
-      'http://gsx2json.com/api?id=1Az0eOzoCoT1hpWxSF1kCH0Rrb1BUR-4tXNgCksbO1Iw'
-    );
-    const data = await response.json();
-    console.log(data);
-    const sections = data.columns.section.filter(
-      (elem, pos, arr) => arr.indexOf(elem) == pos
-    );
-    console.log(data.rows);
-    this.setState({ sections, stories: data.rows });
-  }
-
-  // console.log(data);
-
-  render() {
-    if (this.state.stories) {
-      console.log(this.state.stories);
-    }
-
-    const sections = this.state.sections.map(section => {
-      const stories = this.state.stories
+export default function SectionGrid({ sections, stories }) {
+  if (sections.length > 0 && stories.length > 0) {
+    console.log(sections);
+    const sectionsJSX = sections.map(section => {
+      const storiesJSX = stories
         .filter(story => story.section === section)
-        .map(story => <span>{story.title}</span>);
+        .map(story => (
+          <a href={story.link}>
+            <article>
+              <figure>
+                <img src={story.imageurl} alt={story.imagedescription} />
+                <figcaption>{story.imagecredits}</figcaption>
+              </figure>
+              <h1>{story.headline}</h1>
+              <span>{story.author}</span>
+            </article>
+          </a>
+        ));
       return (
         <div>
           <h2>{section}</h2>
@@ -54,14 +28,13 @@ class SectionGrid extends React.Component<{}, SectionGridState> {
             grid-template-columns="repeat(auto-fill, minmax(250px, 1fr))"
             grid-gap="30px"
           >
-            {stories}
+            {storiesJSX}
           </Div>
         </div>
       );
     });
 
-    return <Div width="700px">{sections}</Div>;
+    return <Div width="100vw">{sectionsJSX}</Div>;
   }
+  return <h1>Loading...</h1>;
 }
-
-export default SectionGrid;
