@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 
 export default function SectionGrid(section, stories) {
   const gridItems = stories.map(story => (
