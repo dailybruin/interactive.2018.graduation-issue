@@ -7,7 +7,7 @@ const LandingSVG = require('../../assets/landing.svg');
 function LandingPage() {
   return (
     <div id="landingDiv">
-      <img src={LandingSVG} alt="" />
+      <img id="landingSvg" src={LandingSVG} alt="" />
       <NavigationBar />
     </div>
   );
