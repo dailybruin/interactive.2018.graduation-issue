@@ -2,6 +2,7 @@ import * as React from 'react';
 import LandingPage from '@/components/LandingPage';
 import YearMarker from '@/components/YearMarker';
 import Timeline from '@/components/Timeline';
+import SectionGrid from '@/components/SectionGrid';
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
         <YearMarker year="2014" />
         <Timeline />
       </div>
+      <SectionGrid />
     </div>
   );
 }
