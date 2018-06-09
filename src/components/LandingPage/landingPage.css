@@ -11,8 +11,20 @@
     flex-direction: column;
     justify-content: center;
     position: fixed;
+    /* background-image: url('../../assets/bg.jpg');
+    background-size: 100%; */
+}
+
+.landingDivPost:before {
+    position: fixed;
     background-image: url('../../assets/bg.jpg');
     background-size: 100%;
+    content: '';
+    background-size: cover;
+    width: 100%;
+    height: 15vh;
+    filter: blur(5px);
+    z-index: -1;
 }
 
 /*  This is the SVG that says "2018" Daily Bruin */
@@ -29,6 +41,7 @@
     #landingDiv {
         position: static;
         background-size: cover;
+        z-index: 10;
     }
     #landingSvg {
         display: none;

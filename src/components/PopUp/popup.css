@@ -1,0 +1,42 @@
+#recapPop {
+    position: absolute;
+    display: none;
+    height: 3em;
+    right: 15%;
+    background-color: white;
+    color: black;
+    z-index: 9;
+    align-items: center;
+    opacity: 0;
+}
+
+#recapTitle {
+    font-weight: 900;
+}
+
+#recapPop svg {
+    width: auto;
+}
+
+.pop-in {
+    animation: popAnim 0.3s ease-in;
+    animation-iteration-count: 1;
+}
+
+@keyframes popAnim {
+    50% {
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+}
+
+.fade-out {
+    animation: fadeAnim 1s ease-out;
+    animation-iteration-count: 1;
+}
+
+@keyframes fadeAnim {
+    100% {
+        opacity: 0;
+    }
+}

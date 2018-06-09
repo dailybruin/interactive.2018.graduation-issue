@@ -8,7 +8,6 @@ landing = () => {
 
     window.addEventListener('scroll', function(e) {
         let s = window.scrollY;
-        console.log(s);
         // 230 start
         // 430 end
         // 9.4/1 = 9.4
@@ -18,6 +17,7 @@ landing = () => {
         if (s < 10) {
             landingDiv.style.height = '100vh';
             navbar.style.height = 'auto';
+            landingDiv.classList.remove('landingDivPost');
         }
         else if (s > 10 && s < 330) {
             let v = -0.2813*s + 102.8;
@@ -61,6 +61,7 @@ landing = () => {
             title.style.marginTop = '0.3em';
             nav.style.paddingTop = '0.3em';
             timeline.style.marginTop = '80vh';
+            landingDiv.classList.add('landingDivPost');
         }
     });
 };
@@ -94,7 +95,6 @@ landingMobile = () => {
 };
 
 if (window.innerWidth > 1010) {
-    console.log(window);
     document.addEventListener("DOMContentLoaded", landing());
 } else {
     document.addEventListener("DOMContentLoaded", landingMobile());
