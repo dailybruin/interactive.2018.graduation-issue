@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Div } from 'glamorous';
 
 interface Story {
   title: string;
@@ -44,16 +45,22 @@ class SectionGrid extends React.Component<{}, SectionGridState> {
     const sections = this.state.sections.map(section => {
       const stories = this.state.stories
         .filter(story => story.section === section)
-        .map(story => <li>{story.title}</li>);
+        .map(story => <span>{story.title}</span>);
       return (
         <div>
           <h2>{section}</h2>
-          <ul>{stories}</ul>
+          <Div
+            display="grid"
+            grid-template-columns="repeat(auto-fill, minmax(250px, 1fr))"
+            grid-gap="30px"
+          >
+            {stories}
+          </Div>
         </div>
       );
     });
 
-    return sections;
+    return <Div width="700px">{sections}</Div>;
   }
 }
 
