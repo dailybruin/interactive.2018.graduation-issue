@@ -5,20 +5,20 @@
 /*  This div contains the 2018 SVG and the navbar and title */
 
 #landingDiv {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: fixed;
-    background-image: url('../../assets/bg.jpg');
-    background-size: 100%;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  background-image: url("../../assets/bg.jpg");
+  background-size: 100%;
 }
 
 /*  This is the SVG that says "2018" Daily Bruin */
 
 #landingSvg {
-    padding-bottom: 2em;
+  padding-bottom: 2em;
 }
 
 /*  These are mobile stylings
@@ -26,11 +26,11 @@
     mess with the sides */
 
 @media only screen and (max-width: 1010px) {
-    #landingDiv {
-        position: static;
-        background-image: rgba(242, 242, 242, 0.17);
-    }
-    #landingSvg {
-        display: none;
-    }
+  #landingDiv {
+    position: static;
+    background-image: rgba(242, 242, 242, 0.17);
+  }
+  #landingSvg {
+    display: none;
+  }
 }
