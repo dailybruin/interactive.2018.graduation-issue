@@ -30,6 +30,8 @@ body {
   filter: blur(5px);
   position: fixed;
   z-index: -1;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-blend-mode: multiply;
 }
 
 /*  9.4vw is the ideal size for the title for EVERY screen size

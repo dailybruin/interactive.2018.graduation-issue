@@ -1,8 +1,9 @@
 import * as React from 'react';
+import './thirty-text.css';
 
 export default function ThirtyText() {
   return (
-    <p>
+    <p className="thirty-text">
       Back in the day, newspaper publications would send their pieces via
       telegraph. To signify the end of a telegram, publications would use
       character sequences such as “-30-.” Those times have changed, but student
