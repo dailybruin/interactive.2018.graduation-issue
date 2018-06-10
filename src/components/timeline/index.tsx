@@ -35,7 +35,7 @@ class Timeline extends React.Component<{}, {}> {
     this.arms = null;
     this.items = null;
     this.offset = 0.8;
-    this.state = { data: [] }
+    this.state = { data: null };
   }
 
   async componentWillMount() {
@@ -121,15 +121,29 @@ class Timeline extends React.Component<{}, {}> {
   }
 
   render() {
-    if (this.state.data == []) {
+    if (this.state.data == null) {
       return (
         <div id="timeline">Loading...</div>
       )
     }
     else {
+      console.log(this.state.data);
+      const elements = this.state.data['years'][0][2014].map(block => {
+        return (
+          <TimelineBlock
+            headline={block.headline}
+            date={block.date}
+            author={block.author}
+            color="#FFFCE1"
+            imgSrc={block.image}
+          />
+        );
+      })
       return (
-        <div id="timeline">Loadfading...</div>
-      )
+        <div id="timeline">
+          {elements}
+        </div>
+      );
     }
     // return (
     //   <div id="timeline">
