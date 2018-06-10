@@ -3,7 +3,8 @@ import LandingPage from '@/components/LandingPage';
 import YearMarker from '@/components/YearMarker';
 import Timeline from '@/components/Timeline';
 import SectionGrid from '@/components/SectionGrid';
-
+import ExplainerText from '@/components/ExplainerText';
+import NavigationBar from '@/components/NavigationBar';
 export interface Story {
   title: string;
   author: string;
@@ -39,6 +40,8 @@ class App extends React.Component<{}, AppState> {
     return (
       <div id="App">
         <LandingPage />
+        {/* <NavigationBar /> */}
+        <ExplainerText />
         <div id="t2014">
           <YearMarker year="2014" />
           <Timeline />

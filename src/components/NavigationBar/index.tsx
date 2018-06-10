@@ -4,8 +4,7 @@ import './navBar.css';
 export default function NavigationBar() {
   return (
     <div id="navbar">
-      <img src="" alt="" />
-      <h1 id="gradIssueH1">graduation issue</h1>
+      {/* <h1 id="gradIssueH1">graduation issue</h1> */}
       <nav id="nav">
         <a href="">News</a>
         <a href="">Sports</a>

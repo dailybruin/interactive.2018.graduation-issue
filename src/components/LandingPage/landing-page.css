@@ -4,22 +4,21 @@
 
 /*  This div contains the 2018 SVG and the navbar and title */
 
-#landingDiv {
-  width: 100%;
+#landing-page {
+  width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: fixed;
-  background-image: url("../../assets/bg.jpg");
-  background-size: 100%;
+  font-family: Montserrat;
+  font-size: 3rem;
 }
 
 /*  This is the SVG that says "2018" Daily Bruin */
 
-#landingSvg {
+/* #landingSvg {
   padding-bottom: 2em;
-}
+} */
 
 /*  These are mobile stylings
     1010px was chosen because that is the exact value the items start to
