@@ -1,6 +1,5 @@
 import * as React from 'react';
 import LandingPage from '@/components/LandingPage';
-import YearMarker from '@/components/YearMarker';
 import Timeline from '@/components/Timeline';
 import SectionGrid from '@/components/SectionGrid';
 import ExplainerText from '@/components/ExplainerText';
