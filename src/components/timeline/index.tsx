@@ -46,15 +46,14 @@ class Timeline extends React.Component<{}, {}> {
     let aml = data.data['data.aml'];
     const images = data.images;
     // Replace images with those from Kerckhoff
-    for (let i = 2014; i < 2019; i++) {
-      aml.years[0][i].map(item => {
+    aml.years.map(year => {
+      year.content.map(item => {
         const img = images.s3[item.image];
         if (img) {
           item.image = img.url;
         }
-      });
-    }
-
+      })
+    });
     this.setState({ data: aml });
   }
 
@@ -128,16 +127,25 @@ class Timeline extends React.Component<{}, {}> {
     }
     else {
       console.log(this.state.data);
-      const elements = this.state.data['years'][0][2014].map(block => {
+      const elements = this.state.data.years.map(year => {
         return (
-          <TimelineBlock
-            headline={block.headline}
-            date={block.date}
-            author={block.author}
-            color="#FFFCE1"
-            imgSrc={block.image}
-          />
-        );
+          <div>
+            <div>THIS IS ONE YEAR</div>
+            {
+              year.content.map(block => {
+                return (
+                  <TimelineBlock
+                    headline={block.headline}
+                    date={block.date}
+                    author={block.author}
+                    color="#FFFCE1"
+                    imgSrc={block.image}
+                  />
+                )
+              })
+            }
+          </div>
+        )
       })
       return (
         <div id="timeline">
@@ -145,42 +153,6 @@ class Timeline extends React.Component<{}, {}> {
         </div>
       );
     }
-    // return (
-    //   <div id="timeline">
-    //     <TimelineBlock
-    //       headline="song of the year"
-    //       date="Sept 2014"
-    //       song="Style"
-    //       artist="Taylor Swift"
-    //       color="#FFFCE1"
-    //       imgSrc="https://is1-ssl.mzstatic.com/image/thumb/Music3/v4/2c/b1/87/2cb187fa-2da2-839e-436a-8997561c0493/UMG_cvrart_00843930013562_01_RGB72_1400x1400_14UMDIM03405.jpg/268x0w.jpg"
-    //     />
-    //     <TimelineBlock
-    //       headline="Beat 'SC Bonfire Cancelled"
-    //       date="Nov 23, 2014"
-    //       author="Ryan Leou and Edward Pedroza"
-    //       credits="Austin Yu"
-    //       color="#FFFCE1"
-    //       imgSrc="http://dailybruin.com/images/2014/11/web.ns_.11.21.bonfire.AYu_.picA_-640x426.jpg"
-    //     />
-    //     <TimelineBlock
-    //       headline="song of the year"
-    //       date="Sept 2014"
-    //       song="Style"
-    //       artist="Taylor Swift"
-    //       color="#FFFCE1"
-    //       imgSrc="https://is1-ssl.mzstatic.com/image/thumb/Music3/v4/2c/b1/87/2cb187fa-2da2-839e-436a-8997561c0493/UMG_cvrart_00843930013562_01_RGB72_1400x1400_14UMDIM03405.jpg/268x0w.jpg"
-    //     />
-    //     <TimelineBlock
-    //       headline="song of the year"
-    //       date="Sept 2014"
-    //       song="Style"
-    //       artist="Taylor Swift"
-    //       color="#FFFCE1"
-    //       imgSrc="https://is1-ssl.mzstatic.com/image/thumb/Music3/v4/2c/b1/87/2cb187fa-2da2-839e-436a-8997561c0493/UMG_cvrart_00843930013562_01_RGB72_1400x1400_14UMDIM03405.jpg/268x0w.jpg"
-    //     />
-    //   </div>
-    // );
   }
 }
 
