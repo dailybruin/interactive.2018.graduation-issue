@@ -3,8 +3,8 @@ import LandingPage from '@/components/LandingPage';
 import Timeline from '@/components/Timeline';
 import SectionGrid from '@/components/SectionGrid';
 import ExplainerText from '@/components/ExplainerText';
-import PopUp from '@/components/PopUp';
-import NavigationBar from '@/components/NavigationBar';
+// import PopUp from '@/components/PopUp';
+import Footer from '@/components/Footer';
 export interface Story {
   title: string;
   author: string;
@@ -47,6 +47,7 @@ class App extends React.Component<{}, AppState> {
           sections={this.state.sections}
           stories={this.state.stories}
         />
+        <Footer />
       </div>
     );
   }
