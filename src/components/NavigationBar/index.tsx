@@ -6,9 +6,5 @@ export default function NavigationBar({ sections }) {
     <a href={`#${section}`}>{section}</a>
   ));
 
-  return (
-    <div id="navbar">
-      <nav id="nav">{sectionsJSX}</nav>
-    </div>
-  );
+  return <nav id="nav">{sectionsJSX}</nav>;
 }

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './landing-page.css';
-// import NavigationBar from '../NavigationBar';
+import NavigationBar from '../NavigationBar';
 
 const LandingSVG = require('../../assets/landing.svg');
 
@@ -23,9 +23,12 @@ class LandingPage extends React.Component {
 
   render() {
     return (
-      <div id="landing-page">
-        <img id="landing-svg" src={LandingSVG} alt="" />
-        <h1>graduation issue</h1>
+      <div id="landingDiv">
+        {LandingSVG}
+        <div id="navbar">
+          <h1 id="gradIssueH1">graduation issue</h1>
+          <NavigationBar sections={this.props.sections} />
+        </div>
       </div>
     );
   }
