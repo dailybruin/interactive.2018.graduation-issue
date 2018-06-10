@@ -20,7 +20,6 @@ class TimelineBlock extends React.Component<{}, {}> {
           song={this.props.song}
           artist={this.props.artist}
           author={this.props.author}
-          credits={this.props.credits}
           imgSrc={this.props.imgSrc}
         />
       </div>

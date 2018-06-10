@@ -11,7 +11,6 @@ class TimelineCaption extends React.Component<{}, {}> {
   private renderArticle(): JSX.Element {
     return (
       <div className="articleItem itemCaption">
-        <div className="imageCredits">({this.props.credits})</div>
         <h2>By {this.props.author}</h2>
       </div>
     );
@@ -26,7 +25,7 @@ class TimelineCaption extends React.Component<{}, {}> {
     );
   }
 
-  private renderMovie(): void {}
+  private renderMovie(): void { }
 
   render(): any {
     if (this.props.song) {
