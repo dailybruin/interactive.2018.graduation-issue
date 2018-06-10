@@ -1,19 +1,16 @@
 import * as React from 'react';
-import { Span } from 'glamorous';
-import './timelineBlock.css';
+// import './timelineBlock.css';
 
-class TimelineArm extends React.Component<{}, {}> {
-  props: any;
-  constructor(props) {
-    super(props);
-  }
+interface TimelineArmProps {
+  date: string;
+  color: string;
+}
 
+class TimelineArm extends React.Component<TimelineArmProps, {}> {
   render() {
     return (
-      <div className="timelineArm">
-        <Span className="armDate" color={this.props.color}>
-          {this.props.date}
-        </Span>
+      <div className="timeline-arm">
+        <span className="timeline-arm__date">{this.props.date}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="262"
