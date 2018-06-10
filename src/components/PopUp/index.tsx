@@ -1,9 +1,5 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
-
-import glamorous, { ThemeProvider } from "glamorous";
-import "./popup.css";
-import { Div } from "glamorous";
+import * as React from 'react';
+import './popup.css';
 
 interface PopUpProps {
   type: string;
@@ -16,7 +12,7 @@ interface PopUpProps {
 class PopUp extends React.Component<PopUpProps, {}> {
   renderIcon() {
     switch (this.props.type) {
-      case "tuition":
+      case 'tuition':
         return (
           <svg
             width="auto"
@@ -42,26 +38,26 @@ class PopUp extends React.Component<PopUpProps, {}> {
             </g>
           </svg>
         );
-      case "champion":
+      case 'champion':
         return <svg />;
     }
   }
 
   renderTitle() {
     switch (this.props.type) {
-      case "tuition":
-        return "Tuition ↑ " + this.props.raise + "%";
-      case "champion":
-        return "NCAA Championship Win!";
+      case 'tuition':
+        return 'Tuition ↑ ' + this.props.raise + '%';
+      case 'champion':
+        return 'NCAA Championship Win!';
     }
   }
 
   renderSubtitle() {
     switch (this.props.type) {
-      case "tuition":
+      case 'tuition':
         return this.props.date;
-      case "champion":
-        return this.props.sport + " - " + this.props.date;
+      case 'champion':
+        return this.props.sport + ' - ' + this.props.date;
     }
   }
 
