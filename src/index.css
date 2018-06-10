@@ -48,16 +48,10 @@ body {
     Do NOT change unless you fix that issue first and reconcile
     the resulting animation breaks */
 
-#t2014 {
+/* #explainer-text {
   margin-top: 100vh;
-}
+} */
 
 /*  These are mobile stylings
     1010px was chosen because that is the exact value the items start to
     mess with the sides */
-
-@media only screen and (max-width: 1010px) {
-  #t2014 {
-    margin-top: 2em;
-  }
-}

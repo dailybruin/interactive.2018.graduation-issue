@@ -1,3 +1,12 @@
-.explainer-text {
-  height: 4rem;
+#explainer-text {
+  margin-top: 100vh;
+  margin-bottom: 15vh;
+  width: 33%;
+}
+
+@media only screen and (max-width: 1010px) {
+  #explainer-text {
+    margin-top: 3em;
+    width: 66%;
+  }
 }
