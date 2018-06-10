@@ -1,10 +1,8 @@
 import * as React from 'react';
 
 class TimelineCaption extends React.Component<{}, {}> {
-  props: any;
   constructor(props) {
     super(props);
-    this.state = {};
     this.renderArticle = this.renderArticle.bind(this);
     this.renderSong = this.renderSong.bind(this);
     this.renderMovie = this.renderMovie.bind(this);
