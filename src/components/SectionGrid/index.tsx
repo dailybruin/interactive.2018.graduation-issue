@@ -20,8 +20,14 @@ export default function SectionGrid({ sections, stories }) {
       return (
         <div id={section}>
           <h2 className="section-heading">{section}</h2>
-          {section === '-30-' && <ThirtyText />}
-          <div className="section-grid">{storiesJSX}</div>
+          {section === '-30-' ? (
+            <>
+              <ThirtyText />
+              <div className="thirty-grid">{storiesJSX}</div>
+            </>
+          ) : (
+            <div className="section-grid">{storiesJSX}</div>
+          )}
         </div>
       );
     });
