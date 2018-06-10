@@ -3,9 +3,12 @@ import './landing-page.css';
 import NavigationBar from '../NavigationBar';
 
 const LandingSVG = require('../../assets/landing.svg');
-console.log(LandingSVG);
 
-class LandingPage extends React.Component {
+interface LandingPageProps {
+  sections: any[];
+}
+
+class LandingPage extends React.Component<LandingPageProps, {}> {
   constructor(props) {
     super(props);
     this.landing = null;
