@@ -8,6 +8,7 @@ body {
 /*  This is where the entire page is.
     We need min-height 100vh to ensure the landing page isn't buggy or
     weird */
+
 #App {
   display: flex;
   flex-direction: column;
@@ -33,8 +34,10 @@ body {
 
 /*  9.4vw is the ideal size for the title for EVERY screen size
     according to the mockup */
+
 #gradIssueH1 {
   font-size: 9.4vw;
+  margin: 0;
 }
 
 /*  This is the first timeline section we see, the 2014 one
@@ -42,6 +45,7 @@ body {
     which has a fixed position
     Do NOT change unless you fix that issue first and reconcile
     the resulting animation breaks */
+
 #t2014 {
   margin-top: 100vh;
 }
@@ -49,6 +53,7 @@ body {
 /*  These are mobile stylings
     1010px was chosen because that is the exact value the items start to
     mess with the sides */
+
 @media only screen and (max-width: 1010px) {
   #t2014 {
     margin-top: 2em;
