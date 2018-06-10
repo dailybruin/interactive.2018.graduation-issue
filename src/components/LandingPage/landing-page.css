@@ -1,0 +1,35 @@
+/*
+=== THESE STYLINGS ARE FOR THE LANDING PAGE
+*/
+
+/*  This div contains the 2018 SVG and the navbar and title */
+
+#landing-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Montserrat;
+  font-size: 3rem;
+}
+
+/*  This is the SVG that says "2018" Daily Bruin */
+
+/* #landingSvg {
+  padding-bottom: 2em;
+} */
+
+/*  These are mobile stylings
+    1010px was chosen because that is the exact value the items start to
+    mess with the sides */
+
+@media only screen and (max-width: 1010px) {
+  #landingDiv {
+    position: static;
+    background-image: rgba(242, 242, 242, 0.17);
+  }
+  #landingSvg {
+    display: none;
+  }
+}
