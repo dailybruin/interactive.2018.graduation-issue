@@ -3,7 +3,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development parcel src/index.html",
     "build":
-      "cross-env NODE_ENV=production parcel build index.html --public-url /",
+      "cross-env NODE_ENV=production parcel build src/index.html --public-url /",
     "precommit": "lint-staged",
     "postmerge": "yarnhook",
     "postcheckout": "yarnhook",
