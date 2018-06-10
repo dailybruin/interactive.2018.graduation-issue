@@ -9,6 +9,16 @@
   grid-gap: 20px;
 }
 
+.thirty-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.thirty-card img {
+  height: 300px;
+}
+
 .section-heading {
   font-weight: bold;
   font-size: 6rem;

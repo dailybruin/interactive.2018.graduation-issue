@@ -1,5 +1,6 @@
 import * as React from 'react';
 import StoryCard from './StoryCard';
+import ThirtyCard from './ThirtyCard';
 import ThirtyText from './ThirtyText';
 
 import './section-grid.css';
@@ -9,12 +10,24 @@ export default function SectionGrid({ sections, stories }) {
     const sectionsJSX = sections.map(section => {
       const storiesJSX = stories
         .filter(story => story.section === section)
-        .map(story => <StoryCard story={story} />);
+        .map(story => {
+          if (section === '-30-') {
+            return <ThirtyCard story={story} />;
+          }
+          return <StoryCard story={story} />;
+        });
+
       return (
         <div id={section}>
           <h2 className="section-heading">{section}</h2>
-          {section === '-30-' && <ThirtyText />}
-          <div className="section-grid">{storiesJSX}</div>
+          {section === '-30-' ? (
+            <>
+              <ThirtyText />
+              <div className="thirty-grid">{storiesJSX}</div>
+            </>
+          ) : (
+            <div className="section-grid">{storiesJSX}</div>
+          )}
         </div>
       );
     });
