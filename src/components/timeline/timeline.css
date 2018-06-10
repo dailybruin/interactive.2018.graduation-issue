@@ -1,0 +1,17 @@
+/*  This is for the parent div that contains all blocks and year markers.
+    We want it to be 90%, not 100% to make the cards not run against the sides */
+.timeline-stem {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* This is the vertical timeline that runs through the page */
+.timeline-stem::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 12px;
+  background: #c8c8c8;
+}
