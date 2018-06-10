@@ -1,7 +1,7 @@
 import * as React from 'react';
-import YearMarker from '@/components/Timeline/YearMarker';
-import TimelineItem from './TimelineItem';
-import './timeline.css';
+import YearMarker from './YearMarker';
+import { default as TimelineItem, TimelineItemType } from './TimelineItem';
+import './timeline.scss';
 
 class Timeline extends React.Component<{}, {}> {
   // state = {
@@ -74,15 +74,46 @@ class Timeline extends React.Component<{}, {}> {
   //   }
   // }
 
+  constructor(props) {
+    super(props);
+    this.state = { years: [] };
+  }
+
+  async componentWillMount() {
+    const response = await fetch(
+      'https://kerckhoff.dailybruin.com/api/packages/flatpages/interactive.2018.gradissue/'
+    );
+    const data = await response.json();
+    console.log(data);
+    // this.setState({ sections, stories: data.rows });
+  }
+
   render() {
     return (
       <div id="timeline">
         <YearMarker year="2014" />
         <div className="timeline-stem">
-          <TimelineItem />
+          <TimelineItem
+            type={TimelineItemType.Article}
+            date="August 2014"
+            image="hi"
+            author="Dustin Newman"
+          />
+          <TimelineItem
+            type={TimelineItemType.Article}
+            date="August 2014"
+            image="hi"
+            author="Dustin Newman"
+          />
+          <TimelineItem
+            type={TimelineItemType.Article}
+            date="August 2014"
+            image="hi"
+            author="Dustin Newman"
+          />
         </div>
         <YearMarker year="2015" />
-        <div className="timeline-stem">
+        {/* <div className="timeline-stem">
           <TimelineItem />
         </div>
         <YearMarker year="2016" />
@@ -93,7 +124,7 @@ class Timeline extends React.Component<{}, {}> {
         <div className="timeline-stem">
           <TimelineItem />
         </div>
-        <YearMarker year="2018" />
+        <YearMarker year="2018" /> */}
       </div>
     );
   }

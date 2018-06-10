@@ -4,7 +4,7 @@
 
 /*  All items have same width but different heights for pictures and captions
     Every timeline item is just a figure with an image and figcaption */
-.timelineItem figure {
+.timeline-box figure {
   width: 215;
   height: auto;
   margin: 0;
@@ -12,22 +12,14 @@
 
 /*  Image should take up full width of card and retain its proportions.
     This is the image inside each item/card.*/
-.timelineItem img {
+.timeline-box img {
   width: 100%;
   height: auto;
 }
 
-/*  The top margin on this (the first item in the margin property) determines
-    how far below the item is from the arm.
-    This is the 'headline' prop above each item */
-.timelineH1 {
-  font-size: 1.5em;
-  margin: 0.4em 0 0.4em 0;
-}
-
 /*  This is either the author or the song title for each item
     Should be bigger than other text in the caption */
-.timelineItem h2 {
+.timeline-box h2 {
   padding: 0;
   margin: 0;
   font-weight: 400;
@@ -37,7 +29,7 @@
 /*  Text inside items should be aligned left and not bold, also flex box
     helps with keeping this organized and scalable.
     This is the text inside each card below the image. */
-.timelineItem figcaption {
+.timeline-box figcaption {
   text-align: left;
   font-weight: 400;
   font-size: 12px;
@@ -48,22 +40,52 @@
 }
 
 /* Text should be white to read easier */
-.itemCaption {
+.box-caption {
   color: white;
 }
 
 /* Song items should have more spacing, articles can't because of the image credits */
-.songItem {
+.box-caption__media {
   padding: 1em 0.5em;
 }
 
-/* Image credits should be underneath image and right-aligned */
-.imageCredits {
-  text-align: right;
-  font-size: 9px;
+/*  This is the author's name and we give it a little padding */
+.box-caption__article h2 {
+  padding: 0.5em 1em;
 }
 
-/*  This is the author's name and we give it a little padding */
-.articleItem h2 {
-  padding: 0.5em 1em;
+/*  The top margin on this (the first item in the margin property) determines
+    how far below the item is from the arm.
+    This is the 'headline' prop above each item */
+
+.timeline-box {
+  color: rgba(242, 242, 242, 0.17);
+  h1 {
+    font-size: 1.5em;
+    margin: 0.4em 0 0.4em 0;
+  }
+}
+
+.timeline-box__article {
+  color: #dff3fe;
+
+  figure {
+    border: 3px solid #dff3fe;
+  }
+}
+
+.timeline-box__song {
+  color: #fffce1;
+
+  figure {
+    border: 3px solid #fffce1;
+  }
+}
+
+.timeline-box__movie {
+  color: #f8e2ce;
+
+  figure {
+    border: 3px solid #f8e2ce;
+  }
 }
