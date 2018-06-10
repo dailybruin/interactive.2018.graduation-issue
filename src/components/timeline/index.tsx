@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './timelineBlock.css';
-import TimelineBlock from './timelineBlock';
+import TimelineBlock from './TimelineBlock';
 
 interface TimelineProps {
   scrolling: boolean;
