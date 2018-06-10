@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Div } from 'glamorous';
-import { Story } from '@/components/App';
 
 export default function SectionGrid({ sections, stories }) {
   if (sections.length > 0 && stories.length > 0) {
