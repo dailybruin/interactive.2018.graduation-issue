@@ -36,7 +36,7 @@ export default class TimelineItem extends React.Component<
   render() {
     return (
       <div className="timeline-item">
-        <TimelineArm color={this.getColor()} date={this.props.date} />
+        <TimelineArm color={this.getColor()} date={this.props.date} type={this.props.type}/>
         <TimelineBox
           type={this.props.type}
           image={this.props.image}

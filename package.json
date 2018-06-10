@@ -2,8 +2,7 @@
   "name": "interactive.2018.graduation-issue",
   "scripts": {
     "start": "cross-env NODE_ENV=development parcel src/index.html",
-    "build":
-      "cross-env NODE_ENV=production parcel build src/index.html --public-url /",
+    "build": "cross-env NODE_ENV=production parcel build src/index.html --public-url /",
     "precommit": "lint-staged",
     "postmerge": "yarnhook",
     "postcheckout": "yarnhook",
@@ -21,7 +20,10 @@
     ]
   },
   "lint-staged": {
-    "*.{js,ts,tsx,json,css,md}": ["prettier --write", "git add"]
+    "*.{js,ts,tsx,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "dependencies": {
     "@types/node": "10.3.1",
@@ -34,6 +36,7 @@
     "glamorous": "4.13.1",
     "parcel-bundler": "1.8.1",
     "parcel-plugin-typescript": "0.7.1",
+    "prettier": "^1.13.5",
     "react": "16.4.0",
     "react-dom": "16.4.0",
     "tslint": "5.10.0",
@@ -44,7 +47,12 @@
     "modules": false,
     "plugins": {
       "autoprefixer": {
-        "browsers": [">1%", "last 4 versions", "Firefox ESR", "not ie < 9"],
+        "browsers": [
+          ">1%",
+          "last 4 versions",
+          "Firefox ESR",
+          "not ie < 9"
+        ],
         "flexbox": "no-2009"
       }
     }

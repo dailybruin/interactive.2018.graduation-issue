@@ -1,16 +1,31 @@
 import * as React from 'react';
-// import './timelineBlock.css';
+import { TimelineItemType } from '../index';
+import './timeline-arm.scss';
 
 interface TimelineArmProps {
+  type: TimelineItemType;
   date: string;
   color: string;
 }
 
 class TimelineArm extends React.Component<TimelineArmProps, {}> {
+  getClassNameForType = () => {
+    switch (this.props.type) {
+      case TimelineItemType.Article:
+        return 'timeline-arm-date__article';
+      case TimelineItemType.Song:
+        return 'timeline-arm-date__song';
+      case TimelineItemType.Movie:
+        return 'timeline-arm-date__movie';
+    }
+  };
+
   render() {
     return (
       <div className="timeline-arm">
-        <span className="timeline-arm__date">{this.props.date}</span>
+        <span className={`timeline-arm__date ${this.getClassNameForType()}`}>
+          {this.props.date}
+        </span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="262"
