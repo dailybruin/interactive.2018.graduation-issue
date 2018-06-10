@@ -3,80 +3,27 @@ import YearMarker from './YearMarker';
 import { default as TimelineItem, TimelineItemType } from './TimelineItem';
 import './timeline.scss';
 
-class Timeline extends React.Component<{}, {}> {
-  // state = {
-  //   scrolling = false,
-  //   timeline = undefined,
-  //   blocks = undefined,
-  //   arms = undefined;
-  //   items = undefined;
-  //   offset = 0.8;
-  // }
+interface TimelineState {
+  data: any;
+}
 
-  // componentDidMount() {
-  //   // this.setState({
-  //   //   timeline: document.getElementById('timeline'),
-  //   //   blocks: document.getElementsByClassName('timelineBlock'),
-  //   //   arms: document.getElementsByClassName('timelineArm'),
-  //   //   items: document.getElementsByClassName('timelineItem'),
-  //   // });
-  //   // window.addEventListener('scroll', e => {
-  //   //   if (!this.scrolling) {
-  //   //     this.scrolling = true;
-  //   //     !window.requestAnimationFrame
-  //   //       ? setTimeout(() => this.checkTimelineScroll, 250)
-  //   //       : window.requestAnimationFrame(() => this.checkTimelineScroll());
-  //   //   }
-  //   // });
-  // }
-
-  // init() {
-  //   this.hideBlocks();
-  // }
-
-  // checkTimelineScroll() {
-  //   this.showBlocks();
-  //   this.scrolling = false;
-  // }
-
-  // showBlocks() {
-  //   if (!'classList' in document.documentElement) {
-  //     return;
-  //   }
-  //   for (var i = 0; i < this.blocks.length; i++) {
-  //     if (
-  //       this.items[i].classList.contains('hidden') &&
-  //       this.blocks[i].getBoundingClientRect().top <=
-  //         window.innerHeight * this.offset
-  //     ) {
-  //       // add bounce-in animation
-  //       this.arms[i].classList.add('timelineItem--bounce-in');
-  //       this.items[i].classList.add('timelineItem--bounce-in');
-  //       this.arms[i].classList.remove('hidden');
-  //       this.items[i].classList.remove('hidden');
-  //     }
-  //   }
-  // }
-
-  // hideBlocks() {
-  //   //hide timeline blocks which are outside the viewport
-  //   if (!'classList' in document.documentElement) {
-  //     return;
-  //   }
-  //   for (var i = 0; i < this.blocks.length; i++) {
-  //     if (
-  //       this.blocks[i].getBoundingClientRect().top >
-  //       window.innerHeight * this.offset
-  //     ) {
-  //       this.arms[i].classList.add('hidden');
-  //       this.items[i].classList.add('hidden');
-  //     }
-  //   }
-  // }
+class Timeline extends React.Component<{}, TimelineState> {
+  scrolling: boolean;
+  timeline: any;
+  items: any;
+  arms: any;
+  boxes: any;
+  offset: number;
 
   constructor(props) {
     super(props);
-    this.state = { years: [] };
+    this.scrolling = false;
+    this.timeline = undefined;
+    this.items = undefined;
+    this.arms = undefined;
+    this.boxes = undefined;
+    this.offset = 0.8;
+    this.state = { data: [] };
   }
 
   async componentWillMount() {
@@ -84,36 +31,110 @@ class Timeline extends React.Component<{}, {}> {
       'https://kerckhoff.dailybruin.com/api/packages/flatpages/interactive.2018.gradissue/'
     );
     const data = await response.json();
-    console.log(data);
-    // this.setState({ sections, stories: data.rows });
+    let aml = data.data['data.aml'];
+    const images = data.images;
+    // Replace images with those from Kerckhoff
+    for (let i = 2014; i < 2019; i++) {
+      aml.years[0][i].map(item => {
+        const img = images.s3[item.image];
+        if (img) {
+          item.image = img.url;
+        }
+      });
+    }
+
+    this.setState({ data: aml });
+  }
+
+  componentDidMount() {
+    this.init();
+    window.addEventListener('scroll', e => {
+      if (!this.scrolling) {
+        this.scrolling = true;
+        !window.requestAnimationFrame
+          ? setTimeout(() => this.checkTimelineScroll, 250)
+          : window.requestAnimationFrame(() => this.checkTimelineScroll());
+      }
+    });
+  }
+
+  init() {
+    this.timeline = document.getElementById('timeline');
+    this.items = document.getElementsByClassName('timeline-item');
+    this.arms = document.getElementsByClassName('timeline-arm');
+    this.boxes = document.getElementsByClassName('timeline-box');
+    this.hideBlocks();
+  }
+
+  checkTimelineScroll() {
+    this.showBlocks();
+    this.scrolling = false;
+  }
+
+  showBlocks() {
+    // if (!'classList' in document.documentElement) {
+    //   return;
+    // }
+    for (var i = 0; i < this.items.length; i++) {
+      if (
+        this.boxes[i].classList.contains('hidden') &&
+        this.items[i].getBoundingClientRect().top <=
+          window.innerHeight * this.offset
+      ) {
+        // add bounce-in animation
+        this.arms[i].classList.add('timeline-box--bounce-in');
+        this.boxes[i].classList.add('timeline-box--bounce-in');
+        this.arms[i].classList.remove('hidden');
+        this.boxes[i].classList.remove('hidden');
+      }
+    }
+  }
+
+  hideBlocks() {
+    //hide timeline blocks which are outside the viewport
+    // if (!'classList' in document.documentElement) {
+    //   return;
+    // }
+    for (var i = 0; i < this.items.length; i++) {
+      if (
+        this.items[i].getBoundingClientRect().top >
+        window.innerHeight * this.offset
+      ) {
+        this.arms[i].classList.add('hidden');
+        this.boxes[i].classList.add('hidden');
+      }
+    }
   }
 
   render() {
-    return (
-      <div id="timeline">
-        <YearMarker year="2014" />
-        <div className="timeline-stem">
-          <TimelineItem
-            type={TimelineItemType.Article}
-            date="August 2014"
-            image="hi"
-            author="Dustin Newman"
-          />
-          <TimelineItem
-            type={TimelineItemType.Article}
-            date="August 2014"
-            image="hi"
-            author="Dustin Newman"
-          />
-          <TimelineItem
-            type={TimelineItemType.Article}
-            date="August 2014"
-            image="hi"
-            author="Dustin Newman"
-          />
-        </div>
-        <YearMarker year="2015" />
-        {/* <div className="timeline-stem">
+    if (this.state.data == []) {
+      return <div id="timeline">Loading...</div>;
+    } else {
+      return (
+        <div id="timeline">
+          <YearMarker year="2014" />
+          <div className="timeline-stem">
+            <TimelineItem
+              type={TimelineItemType.Article}
+              date="August 2014"
+              image="hi"
+              author="Dustin Newman"
+            />
+            <TimelineItem
+              type={TimelineItemType.Article}
+              date="August 2014"
+              image="hi"
+              author="Dustin Newman"
+            />
+            <TimelineItem
+              type={TimelineItemType.Article}
+              date="August 2014"
+              image="hi"
+              author="Dustin Newman"
+            />
+          </div>
+          <YearMarker year="2015" />
+          {/* <div className="timeline-stem">
           <TimelineItem />
         </div>
         <YearMarker year="2016" />
@@ -125,8 +146,9 @@ class Timeline extends React.Component<{}, {}> {
           <TimelineItem />
         </div>
         <YearMarker year="2018" /> */}
-      </div>
-    );
+        </div>
+      );
+    }
   }
 }
 
