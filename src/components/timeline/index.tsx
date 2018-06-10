@@ -119,7 +119,7 @@ class Timeline extends React.Component<{}, {}> {
     }
   }
 
-  render() {
+  render(): SJ {
     if (this.state.data == null) {
       return (
         <div id="timeline">Loading...</div>
