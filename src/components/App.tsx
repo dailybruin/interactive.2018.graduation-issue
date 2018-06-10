@@ -1,7 +1,7 @@
 import * as React from 'react';
 import LandingPage from '@/components/LandingPage';
-import YearMarker from '@/components/YearMarker';
-import Timeline from '@/components/Timeline';
+// import YearMarker from '@/components/YearMarker';
+// import Timeline from '@/components/Timeline';
 import SectionGrid from '@/components/SectionGrid';
 import ExplainerText from '@/components/ExplainerText';
 import NavigationBar from '@/components/NavigationBar';
@@ -42,10 +42,10 @@ class App extends React.Component<{}, AppState> {
         <LandingPage />
         <ExplainerText />
         <NavigationBar sections={this.state.sections} />
-        <div id="t2014">
+        {/* <div id="t2014">
           <YearMarker year="2014" />
           <Timeline />
-        </div>
+        </div> */}
         <SectionGrid
           sections={this.state.sections}
           stories={this.state.stories}
