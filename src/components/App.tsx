@@ -4,6 +4,7 @@ import YearMarker from '@/components/YearMarker';
 import Timeline from '@/components/Timeline';
 import SectionGrid from '@/components/SectionGrid';
 import ExplainerText from '@/components/ExplainerText';
+import PopUp from '@/components/PopUp';
 import NavigationBar from '@/components/NavigationBar';
 export interface Story {
   title: string;
@@ -41,6 +42,7 @@ class App extends React.Component<{}, AppState> {
       <div id="App">
         <LandingPage sections={this.state.sections} />
         <ExplainerText />
+        <PopUp type="tuition" date="Nov 23" />
         <div id="t2014">
           <YearMarker year="2014" />
           <Timeline />

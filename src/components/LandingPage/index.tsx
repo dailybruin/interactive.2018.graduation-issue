@@ -6,7 +6,12 @@ const LandingSVG = require('../../assets/landing.svg');
 console.log(LandingSVG);
 
 class LandingPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.landing = null;
+  }
   componentDidMount() {
+    this.landing = document.getElementById('landingDiv');
     window.addEventListener('scroll', this.handleScroll);
   }
 
@@ -15,11 +20,9 @@ class LandingPage extends React.Component {
   }
 
   handleScroll(event) {
-    console.log(event);
-    console.log(window.scrollY);
-
-    const landing = document.getElementById('landing-page');
-    landing!.style.opacity = `${(100 - window.scrollY) * 0.01}`;
+    // console.log(event);
+    // console.log(window.scrollY);
+    // this.landing.style.opacity = `${(100 - window.scrollY) * 0.01}`;
   }
 
   render() {
