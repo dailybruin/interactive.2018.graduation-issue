@@ -21,7 +21,7 @@ export default function SectionGrid({ sections, stories }) {
           </a>
         ));
       return (
-        <div>
+        <div id={section}>
           <h2>{section}</h2>
           {section === '-30-' && (
             <div>

@@ -40,8 +40,8 @@ class App extends React.Component<{}, AppState> {
     return (
       <div id="App">
         <LandingPage />
-        {/* <NavigationBar /> */}
         <ExplainerText />
+        <NavigationBar sections={this.state.sections} />
         <div id="t2014">
           <YearMarker year="2014" />
           <Timeline />

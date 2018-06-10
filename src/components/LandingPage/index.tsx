@@ -18,7 +18,7 @@ class LandingPage extends React.Component {
     console.log(window.scrollY);
 
     const landing = document.getElementById('landing-page');
-    landing.style.opacity = `${(100 - window.scrollY) * 0.01}`;
+    landing!.style.opacity = `${(100 - window.scrollY) * 0.01}`;
   }
 
   render() {
