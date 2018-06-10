@@ -1,0 +1,18 @@
+.sections {
+  width: 900px;
+  margin: 0 auto;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.section-heading {
+  font-weight: bold;
+  font-size: 6rem;
+  -webkit-text-stroke: 2px white;
+  color: transparent;
+  margin: 1rem 0;
+}
