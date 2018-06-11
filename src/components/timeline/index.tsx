@@ -32,18 +32,22 @@ class Timeline extends React.Component<{}, TimelineState> {
     );
     const data = await response.json();
     let aml = data.data['data.aml'];
-    // const images = data.images;
-    // // Replace images with those from Kerckhoff
-    // for (let i = 2014; i < 2019; i++) {
-    //   aml.years[0][i].map(item => {
-    //     const img = images.s3[item.image];
-    //     if (img) {
-    //       item.image = img.url;
-    //     }
-    //   });
-    // }
+    const images = data.images;
+    console.log(aml);
 
-    this.setState({ data: aml.years });
+    for (let i = 0; i < aml.years.length; i += 1) {
+      aml.years[i].content.map((item, j) => {
+        const img = images.s3[item.image];
+        if (img) {
+          aml.years[i].content[j].image = img.url;
+        }
+      });
+    }
+    console.log(aml);
+
+    this.setState({
+      data: aml.years,
+    });
   }
 
   componentDidMount() {

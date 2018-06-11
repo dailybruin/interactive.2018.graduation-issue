@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './thirty-text.css';
+import './thirty-text.scss';
 
 export default function ThirtyText() {
   return (
