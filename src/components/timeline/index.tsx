@@ -32,18 +32,18 @@ class Timeline extends React.Component<{}, TimelineState> {
     );
     const data = await response.json();
     let aml = data.data['data.aml'];
-    const images = data.images;
-    // Replace images with those from Kerckhoff
-    for (let i = 2014; i < 2019; i++) {
-      aml.years[0][i].map(item => {
-        const img = images.s3[item.image];
-        if (img) {
-          item.image = img.url;
-        }
-      });
-    }
+    // const images = data.images;
+    // // Replace images with those from Kerckhoff
+    // for (let i = 2014; i < 2019; i++) {
+    //   aml.years[0][i].map(item => {
+    //     const img = images.s3[item.image];
+    //     if (img) {
+    //       item.image = img.url;
+    //     }
+    //   });
+    // }
 
-    this.setState({ data: aml });
+    this.setState({ data: aml.years });
   }
 
   componentDidMount() {
@@ -107,116 +107,35 @@ class Timeline extends React.Component<{}, TimelineState> {
   }
 
   render() {
-    if (this.state.data == []) {
+    if (this.state.data.length === 0) {
       return <div id="timeline">Loading...</div>;
     } else {
+      console.log(this.state.data);
+      const events = this.state.data.map(year =>
+        year.content.map(story => (
+          <TimelineItem
+            type={TimelineItemType.Article}
+            date={story.date}
+            image={story.image}
+            author={story.author}
+            link={story.link}
+            headline={story.headline}
+          />
+        ))
+      );
+
       return (
         <div id="timeline">
           <YearMarker year="2014" />
-          <div className="timeline-stem">
-            <TimelineItem
-              type={TimelineItemType.Article}
-              date="August 2014"
-              image="hi"
-              author="Dustin Newman"
-            />
-            <TimelineItem
-              type={TimelineItemType.Article}
-              date="August 2014"
-              image="hi"
-              author="Dustin Newman"
-            />
-            <TimelineItem
-              type={TimelineItemType.Article}
-              date="August 2014"
-              image="hi"
-              author="Dustin Newman"
-            />
-          </div>
+          <div className="timeline-stem">{events[0]}</div>
           <YearMarker year="2015" />
-          <div className="timeline-stem">
-            <TimelineItem
-              type={TimelineItemType.Article}
-              date="August 2014"
-              image="hi"
-              author="Dustin Newman"
-            />
-            <TimelineItem
-              type={TimelineItemType.Article}
-              date="August 2014"
-              image="hi"
-              author="Dustin Newman"
-            />
-            <TimelineItem
-              type={TimelineItemType.Article}
-              date="August 2014"
-              image="hi"
-              author="Dustin Newman"
-            />
-          </div>
+          <div className="timeline-stem">{events[1]}</div>
           <YearMarker year="2016" />
-          <div className="timeline-stem">
-            <TimelineItem
-              type={TimelineItemType.Article}
-              date="August 2014"
-              image="hi"
-              author="Dustin Newman"
-            />
-            <TimelineItem
-              type={TimelineItemType.Article}
-              date="August 2014"
-              image="hi"
-              author="Dustin Newman"
-            />
-            <TimelineItem
-              type={TimelineItemType.Article}
-              date="August 2014"
-              image="hi"
-              author="Dustin Newman"
-            />
-          </div>
+          <div className="timeline-stem">{events[2]}</div>
           <YearMarker year="2017" />
-          <div className="timeline-stem">
-            <TimelineItem
-              type={TimelineItemType.Article}
-              date="August 2014"
-              image="hi"
-              author="Dustin Newman"
-            />
-            <TimelineItem
-              type={TimelineItemType.Article}
-              date="August 2014"
-              image="hi"
-              author="Dustin Newman"
-            />
-            <TimelineItem
-              type={TimelineItemType.Article}
-              date="August 2014"
-              image="hi"
-              author="Dustin Newman"
-            />
-          </div>
+          <div className="timeline-stem">{events[3]}</div>
           <YearMarker year="2018" />
-          <div className="timeline-stem">
-            <TimelineItem
-              type={TimelineItemType.Article}
-              date="August 2014"
-              image="hi"
-              author="Dustin Newman"
-            />
-            <TimelineItem
-              type={TimelineItemType.Article}
-              date="August 2014"
-              image="hi"
-              author="Dustin Newman"
-            />
-            <TimelineItem
-              type={TimelineItemType.Article}
-              date="August 2014"
-              image="hi"
-              author="Dustin Newman"
-            />
-          </div>
+          <div className="timeline-stem">{events[4]}</div>
         </div>
       );
     }

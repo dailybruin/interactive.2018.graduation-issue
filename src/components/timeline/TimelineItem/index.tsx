@@ -13,6 +13,7 @@ interface TimelineItemProps {
   type: TimelineItemType;
   date: string;
   image: string;
+  link: string;
   headline?: string;
   media?: string;
   author: string;
@@ -36,14 +37,20 @@ export default class TimelineItem extends React.Component<
   render() {
     return (
       <div className="timeline-item">
-        <TimelineArm color={this.getColor()} date={this.props.date} type={this.props.type}/>
-        <TimelineBox
+        <TimelineArm
+          color={this.getColor()}
+          date={this.props.date}
           type={this.props.type}
-          image={this.props.image}
-          headline={this.props.headline}
-          media={this.props.media}
-          author={this.props.author}
         />
+        <a href={this.props.link}>
+          <TimelineBox
+            type={this.props.type}
+            image={this.props.image}
+            headline={this.props.headline}
+            media={this.props.media}
+            author={this.props.author}
+          />
+        </a>
       </div>
     );
   }
