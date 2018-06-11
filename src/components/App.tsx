@@ -41,7 +41,6 @@ class App extends React.Component<{}, AppState> {
       <div id="App">
         <LandingPage sections={this.state.sections} />
         <ExplainerText />
-        {/* <PopUp type="tuition" date="Nov 23" /> */}
         <Timeline />
         <SectionGrid
           sections={this.state.sections}
