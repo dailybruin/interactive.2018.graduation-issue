@@ -10,6 +10,14 @@
   grid-gap: 20px;
 }
 
+#prime .section-grid {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+#prime .section-grid .story-card a img {
+  object-position: 0px -280px;
+}
+
 .thirty-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -33,16 +41,16 @@
     margin-left: 1rem;
     margin-right: 1rem;
   }
-
   .section-heading {
     font-size: 3.8rem;
   }
-
   .section-grid {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
-
   .thirty-grid {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+  #prime .section-grid .story-card a img {
+    object-position: initial;
   }
 }
