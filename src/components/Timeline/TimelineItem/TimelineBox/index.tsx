@@ -26,8 +26,10 @@ class TimelineBox extends React.Component<TimelineBoxProps, {}> {
     switch (this.props.type) {
       case TimelineItemType.Article:
         return (
-          <div className="box-caption box-caption__article">
-            <h2>By {this.props.author}</h2>
+          <div className="box-caption box-caption__articlebyline byline">
+            <h2>
+              By <span className="author">{this.props.author}</span>
+            </h2>
           </div>
         );
       case TimelineItemType.Movie:
