@@ -1,0 +1,40 @@
+/*
+=== THESE STYLES APPLY TO THE TIMELINE AND HOW BLOCKS ARE ARRANGED IN RELATION TO EACH OTHER
+=== FOR INDIVIDUAL STYLES SEE 'timeline-box.css'
+*/
+
+/* Used for the bounce animation to bring in items */
+.hidden {
+  visibility: hidden;
+}
+
+/*  Every timeline block contains the timeline item and its arm.
+    These are 45% because each block is half the width of the timeline
+    (90/2) = 45 and are flexboxes */
+.timeline-item {
+  display: flex;
+  width: 45%;
+  position: relative;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.timeline-arm {
+  display: flex;
+  flex-direction: column;
+}
+.timeline-arm__date {
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+
+/*  These are mobile stylings
+    1010px was chosen because that is the exact value the items start to
+    mess with the sides */
+@media only screen and (max-width: 1010px) {
+}

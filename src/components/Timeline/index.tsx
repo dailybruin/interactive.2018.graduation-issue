@@ -9,7 +9,7 @@ interface TimelineState {
 
 class Timeline extends React.Component<{}, TimelineState> {
   scrolling: boolean;
-  timeline: any;
+  timelines: any;
   items: any;
   arms: any;
   boxes: any;
@@ -18,7 +18,7 @@ class Timeline extends React.Component<{}, TimelineState> {
   constructor(props) {
     super(props);
     this.scrolling = false;
-    this.timeline = undefined;
+    this.timelines = undefined;
     this.items = undefined;
     this.arms = undefined;
     this.boxes = undefined;
@@ -51,6 +51,7 @@ class Timeline extends React.Component<{}, TimelineState> {
   }
 
   componentDidMount() {
+    console.log('mounted');
     this.init();
     window.addEventListener('scroll', e => {
       if (!this.scrolling) {
@@ -63,7 +64,7 @@ class Timeline extends React.Component<{}, TimelineState> {
   }
 
   init() {
-    this.timeline = document.getElementById('timeline');
+    // this.timelines = document.getElementById('timeline');
     this.items = document.getElementsByClassName('timeline-item');
     this.arms = document.getElementsByClassName('timeline-arm');
     this.boxes = document.getElementsByClassName('timeline-box');
@@ -71,6 +72,7 @@ class Timeline extends React.Component<{}, TimelineState> {
   }
 
   checkTimelineScroll() {
+    console.log('check timeline scroll');
     this.showBlocks();
     this.scrolling = false;
   }
@@ -81,15 +83,15 @@ class Timeline extends React.Component<{}, TimelineState> {
     // }
     for (var i = 0; i < this.items.length; i++) {
       if (
-        this.boxes[i].classList.contains('hidden') &&
+        this.items[i].classList.contains('hidden') &&
         this.items[i].getBoundingClientRect().top <=
           window.innerHeight * this.offset
       ) {
         // add bounce-in animation
+        console.log('show blocks passed');
         this.arms[i].classList.add('timeline-box--bounce-in');
         this.boxes[i].classList.add('timeline-box--bounce-in');
-        this.arms[i].classList.remove('hidden');
-        this.boxes[i].classList.remove('hidden');
+        this.items[i].classList.remove('hidden');
       }
     }
   }
@@ -99,13 +101,13 @@ class Timeline extends React.Component<{}, TimelineState> {
     // if (!'classList' in document.documentElement) {
     //   return;
     // }
-    for (var i = 0; i < this.items.length; i++) {
+    for (let i = 0; i < this.items.length; i++) {
       if (
         this.items[i].getBoundingClientRect().top >
         window.innerHeight * this.offset
       ) {
-        this.arms[i].classList.add('hidden');
-        this.boxes[i].classList.add('hidden');
+        console.log('add hidden');
+        this.items[i].classList.add('hidden');
       }
     }
   }

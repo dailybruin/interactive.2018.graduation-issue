@@ -1,0 +1,28 @@
+/*  The arm contains the date and the SVG arm element.
+    As such we have a flexbox column style so they stack on top of each other */
+
+.timeline-arm {
+  display: flex;
+  flex-direction: column;
+}
+
+/*  This is the date above each SVG arm element */
+
+.timeline-arm__date {
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+
+.timeline-arm-date__article {
+  color: #DFF3FE;
+}
+
+.timeline-arm-date__song {
+  color: #FFFCE1;
+}
+
+.timeline-arm-date__movie {
+  color: #F8E2CE;
+}
