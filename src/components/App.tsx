@@ -5,6 +5,8 @@ import SectionGrid from '@/components/SectionGrid';
 import ExplainerText from '@/components/ExplainerText';
 import Footer from '@/components/Footer';
 
+const data = require('../api.json');
+
 export interface Story {
   title: string;
   author: string;
@@ -25,10 +27,10 @@ class App extends React.Component<{}, AppState> {
   }
 
   async componentWillMount() {
-    const response = await fetch(
-      'http://gsx2json.com/api?id=1ui_z_itOJ1R0wWjL4lY8zj8eAfJusxVN4TSzyJ3MlCg'
-    );
-    const data = await response.json();
+    // const response = await fetch(
+    //   'http://gsx2json.com/api?id=1ui_z_itOJ1R0wWjL4lY8zj8eAfJusxVN4TSzyJ3MlCg'
+    // );
+    // const data = await response.json();
     const sections = data.columns.section.filter(
       (elem, pos, arr) => arr.indexOf(elem) == pos
     );

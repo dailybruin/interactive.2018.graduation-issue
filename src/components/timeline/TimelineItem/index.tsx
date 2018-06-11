@@ -4,9 +4,9 @@ import TimelineBox from '@/components/Timeline/TimelineItem/TimelineBox';
 import './timeline-item.scss';
 
 export enum TimelineItemType {
-  Article,
-  Movie,
-  Song,
+  Article = 'article',
+  Movie = 'movie',
+  Song = 'song',
 }
 
 interface TimelineItemProps {

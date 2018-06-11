@@ -120,12 +120,13 @@ class Timeline extends React.Component<{}, TimelineState> {
       const events = this.state.data.map(year =>
         year.content.map(story => (
           <TimelineItem
-            type={TimelineItemType.Article}
+            type={story.type}
             date={story.date}
             image={story.image}
             author={story.author}
             link={story.link}
             headline={story.headline}
+            media={story.media}
           />
         ))
       );
