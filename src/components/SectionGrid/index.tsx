@@ -32,7 +32,12 @@ export default function SectionGrid({ sections, stories }) {
       );
     });
 
-    return <div className="sections">{sectionsJSX}</div>;
+    return (
+      <div className="sections">
+        <h1 className="section-heading">today</h1>
+        {sectionsJSX}
+      </div>
+    );
   }
   return <h1>Loading...</h1>;
 }
