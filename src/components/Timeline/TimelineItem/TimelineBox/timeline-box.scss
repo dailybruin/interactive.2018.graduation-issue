@@ -2,8 +2,13 @@
 === THESE STYLES APPLY TO THE INDIVIDUAL ITEMS/CARDS
 */
 
+.hidden {
+  visibility: hidden;
+}
+
 /*  All items have same width but different heights for pictures and captions
     Every timeline item is just a figure with an image and figcaption */
+
 .timeline-box figure {
   width: 215;
   height: auto;
@@ -12,6 +17,7 @@
 
 /*  Image should take up full width of card and retain its proportions.
     This is the image inside each item/card.*/
+
 .timeline-box img {
   width: 100%;
   height: auto;
@@ -19,6 +25,7 @@
 
 /*  This is either the author or the song title for each item
     Should be bigger than other text in the caption */
+
 .timeline-box h2 {
   padding: 0;
   margin: 0;
@@ -29,6 +36,7 @@
 /*  Text inside items should be aligned left and not bold, also flex box
     helps with keeping this organized and scalable.
     This is the text inside each card below the image. */
+
 .timeline-box figcaption {
   text-align: left;
   font-weight: 400;
@@ -40,16 +48,19 @@
 }
 
 /* Text should be white to read easier */
+
 .box-caption {
   color: white;
 }
 
 /* Song items should have more spacing, articles can't because of the image credits */
+
 .box-caption__media {
   padding: 1em 0.5em;
 }
 
 /*  This is the author's name and we give it a little padding */
+
 .box-caption__article h2 {
   padding: 0.5em 1em;
 }
@@ -68,11 +79,9 @@
 
 .timeline-box__article {
   color: #dff3fe;
-
   figure {
     border: 3px solid #dff3fe;
   }
-
   img {
     border-bottom: 3px solid #dff3fe;
   }
@@ -80,11 +89,9 @@
 
 .timeline-box__song {
   color: #fffce1;
-
   figure {
     border: 3px solid #fffce1;
   }
-
   img {
     border-bottom: 3px solid #fffce1;
   }
@@ -92,11 +99,9 @@
 
 .timeline-box__movie {
   color: #f8e2ce;
-
   figure {
     border: 3px solid #f8e2ce;
   }
-
   img {
     border-bottom: 3px solid #f8e2ce;
   }

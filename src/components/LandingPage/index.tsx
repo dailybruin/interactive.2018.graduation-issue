@@ -57,7 +57,6 @@ class LandingPage extends React.Component<LandingPageProps, {}> {
 
   handleScroll = event => {
     let s = window.scrollY;
-    console.log(s);
     // 230 start
     // 430 end
     // 9.4/1 = 9.4

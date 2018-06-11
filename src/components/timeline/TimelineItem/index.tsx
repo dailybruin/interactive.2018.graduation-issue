@@ -36,7 +36,7 @@ export default class TimelineItem extends React.Component<
 
   render() {
     return (
-      <div className="timeline-item">
+      <div className="timeline-item hidden">
         <TimelineArm
           color={this.getColor()}
           date={this.props.date}
