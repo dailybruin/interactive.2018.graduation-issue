@@ -72,6 +72,10 @@
   figure {
     border: 3px solid #dff3fe;
   }
+
+  img {
+    border-bottom: 3px solid #dff3fe;
+  }
 }
 
 .timeline-box__song {
@@ -80,6 +84,10 @@
   figure {
     border: 3px solid #fffce1;
   }
+
+  img {
+    border-bottom: 3px solid #fffce1;
+  }
 }
 
 .timeline-box__movie {
@@ -87,5 +95,9 @@
 
   figure {
     border: 3px solid #f8e2ce;
+  }
+
+  img {
+    border-bottom: 3px solid #f8e2ce;
   }
 }

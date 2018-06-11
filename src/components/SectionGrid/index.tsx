@@ -1,9 +1,9 @@
 import * as React from 'react';
-import StoryCard from './StoryCard';
-import ThirtyCard from './ThirtyCard';
-import ThirtyText from './ThirtyText';
+import StoryCard from './StoryCard/index';
+import ThirtyCard from './ThirtyCard/index';
+import ThirtyText from './ThirtyText/ThirtyText';
 
-import './section-grid.css';
+import './section-grid.scss';
 
 export default function SectionGrid({ sections, stories }) {
   if (sections.length > 0 && stories.length > 0) {
