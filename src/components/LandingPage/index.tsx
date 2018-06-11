@@ -34,7 +34,7 @@ class LandingPage extends React.Component<LandingPageProps, {}> {
       );
     } else {
       document.addEventListener('DOMContentLoaded', () =>
-        this.handleScrollMobile(event)
+        document.addEventListener('scroll', e => this.handleScrollMobile(e))
       );
     }
   }
@@ -118,6 +118,7 @@ class LandingPage extends React.Component<LandingPageProps, {}> {
       this.navbar.style.zIndex = '3';
       this.navbar.style.backgroundImage = 'inherit';
       this.navbar.style.position = 'fixed';
+      this.landingDiv.classList.add('landingDivPost');
     } else {
       this.nav.style.display = 'flex';
       this.landingDiv.style.justifyContent = 'center';
@@ -125,6 +126,7 @@ class LandingPage extends React.Component<LandingPageProps, {}> {
       this.navbar.style.position = 'static';
       this.navbar.style.width = '90%';
       this.navbar.style.textAlign = 'right';
+      this.landingDiv.classList.remove('landingDivPost');
     }
   };
 

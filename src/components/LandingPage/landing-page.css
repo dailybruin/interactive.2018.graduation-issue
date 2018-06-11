@@ -20,7 +20,7 @@
   background-image: url("../../assets/bg.jpg");
   background-color: rgba(0, 0, 0, 0.3);
   background-blend-mode: multiply;
-  background-size: 100%;
+  background-attachment: fixed;
   content: "";
   background-size: cover;
   width: 100%;
