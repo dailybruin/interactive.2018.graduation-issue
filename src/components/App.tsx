@@ -1,10 +1,10 @@
 import * as React from 'react';
-import LandingPage from '@/components/LandingPage';
-import Timeline from '@/components/Timeline';
-import SectionGrid from '@/components/SectionGrid';
-import ExplainerText from '@/components/ExplainerText';
-// import PopUp from '@/components/PopUp';
-import Footer from '@/components/Footer';
+import LandingPage from 'src/components/LandingPage';
+import Timeline from 'src/components/Timeline';
+import SectionGrid from 'src/components/SectionGrid';
+import ExplainerText from 'src/components/ExplainerText';
+import Footer from 'src/components/Footer';
+
 export interface Story {
   title: string;
   author: string;
