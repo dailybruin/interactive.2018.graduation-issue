@@ -42,6 +42,15 @@ body {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    color: e6e6e6;
+  }
+}
+
 /*  This is the first timeline section we see, the 2014 one
     It needs a margin to not interfere with the landing page
     which has a fixed position

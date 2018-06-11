@@ -4,10 +4,10 @@ import './explainer-text.css';
 export default function ExplainerText() {
   return (
     <p id="explainer-text">
-      Below is a timeline of your past four years here at UCLA. Follow the Daily
-      Bruin's coverage of both local and national events over the past four
-      years. Scroll down to check out the rest of the Daily Bruin's content for
-      the end of the year.
+      Below is a timeline of major events and popular trends during the past
+      four years here at UCLA. Scroll down or click a section above to check out
+      the rest of the Daily Bruin's content for the 2017–2018 school year's
+      final issue.
     </p>
   );
 }

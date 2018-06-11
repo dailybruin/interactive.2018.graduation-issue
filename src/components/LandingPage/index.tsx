@@ -36,7 +36,6 @@ class LandingPage extends React.Component<LandingPageProps, {}> {
     this.timeline = document.getElementById('explainer-text');
 
     if (window.innerWidth > 1010) {
-      console.log('calling handle scroll');
       document.addEventListener('DOMContentLoaded', () =>
         document.addEventListener('scroll', e => this.handleScroll(e))
       );

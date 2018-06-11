@@ -33,7 +33,6 @@ class Timeline extends React.Component<{}, TimelineState> {
     const data = await response.json();
     let aml = data.data['data.aml'];
     const images = data.images;
-    console.log(aml);
 
     for (let i = 0; i < aml.years.length; i += 1) {
       aml.years[i].content.map((item, j) => {
@@ -43,7 +42,6 @@ class Timeline extends React.Component<{}, TimelineState> {
         }
       });
     }
-    console.log(aml);
 
     this.setState({
       data: aml.years,
@@ -51,7 +49,6 @@ class Timeline extends React.Component<{}, TimelineState> {
   }
 
   componentDidMount() {
-    console.log('mounted');
     this.init();
     window.addEventListener('scroll', e => {
       if (!this.scrolling) {
@@ -72,7 +69,6 @@ class Timeline extends React.Component<{}, TimelineState> {
   }
 
   checkTimelineScroll() {
-    console.log('check timeline scroll');
     this.showBlocks();
     this.scrolling = false;
   }
@@ -88,7 +84,6 @@ class Timeline extends React.Component<{}, TimelineState> {
           window.innerHeight * this.offset
       ) {
         // add bounce-in animation
-        console.log('show blocks passed');
         this.arms[i].classList.add('timeline-box--bounce-in');
         this.boxes[i].classList.add('timeline-box--bounce-in');
         this.items[i].classList.remove('hidden');
@@ -106,7 +101,6 @@ class Timeline extends React.Component<{}, TimelineState> {
         this.items[i].getBoundingClientRect().top >
         window.innerHeight * this.offset
       ) {
-        console.log('add hidden');
         this.items[i].classList.add('hidden');
       }
     }
@@ -116,7 +110,6 @@ class Timeline extends React.Component<{}, TimelineState> {
     if (this.state.data.length === 0) {
       return <div id="timeline">Loading...</div>;
     } else {
-      console.log(this.state.data);
       const events = this.state.data.map(year =>
         year.content.map(story => (
           <TimelineItem

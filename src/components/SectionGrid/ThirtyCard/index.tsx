@@ -1,5 +1,4 @@
 import * as React from 'react';
-// import './story-card.css';
 
 export default function ThirtyCard({ story }) {
   return (
