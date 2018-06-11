@@ -134,18 +134,89 @@ class Timeline extends React.Component<{}, TimelineState> {
             />
           </div>
           <YearMarker year="2015" />
-          {/* <div className="timeline-stem">
-          <TimelineItem />
-        </div>
-        <YearMarker year="2016" />
-        <div className="timeline-stem">
-          <TimelineItem />
-        </div>
-        <YearMarker year="2017" />
-        <div className="timeline-stem">
-          <TimelineItem />
-        </div>
-        <YearMarker year="2018" /> */}
+          <div className="timeline-stem">
+            <TimelineItem
+              type={TimelineItemType.Article}
+              date="August 2014"
+              image="hi"
+              author="Dustin Newman"
+            />
+            <TimelineItem
+              type={TimelineItemType.Article}
+              date="August 2014"
+              image="hi"
+              author="Dustin Newman"
+            />
+            <TimelineItem
+              type={TimelineItemType.Article}
+              date="August 2014"
+              image="hi"
+              author="Dustin Newman"
+            />
+          </div>
+          <YearMarker year="2016" />
+          <div className="timeline-stem">
+            <TimelineItem
+              type={TimelineItemType.Article}
+              date="August 2014"
+              image="hi"
+              author="Dustin Newman"
+            />
+            <TimelineItem
+              type={TimelineItemType.Article}
+              date="August 2014"
+              image="hi"
+              author="Dustin Newman"
+            />
+            <TimelineItem
+              type={TimelineItemType.Article}
+              date="August 2014"
+              image="hi"
+              author="Dustin Newman"
+            />
+          </div>
+          <YearMarker year="2017" />
+          <div className="timeline-stem">
+            <TimelineItem
+              type={TimelineItemType.Article}
+              date="August 2014"
+              image="hi"
+              author="Dustin Newman"
+            />
+            <TimelineItem
+              type={TimelineItemType.Article}
+              date="August 2014"
+              image="hi"
+              author="Dustin Newman"
+            />
+            <TimelineItem
+              type={TimelineItemType.Article}
+              date="August 2014"
+              image="hi"
+              author="Dustin Newman"
+            />
+          </div>
+          <YearMarker year="2018" />
+          <div className="timeline-stem">
+            <TimelineItem
+              type={TimelineItemType.Article}
+              date="August 2014"
+              image="hi"
+              author="Dustin Newman"
+            />
+            <TimelineItem
+              type={TimelineItemType.Article}
+              date="August 2014"
+              image="hi"
+              author="Dustin Newman"
+            />
+            <TimelineItem
+              type={TimelineItemType.Article}
+              date="August 2014"
+              image="hi"
+              author="Dustin Newman"
+            />
+          </div>
         </div>
       );
     }

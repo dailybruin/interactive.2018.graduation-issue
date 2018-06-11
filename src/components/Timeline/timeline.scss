@@ -1,5 +1,6 @@
 /*  This is for the parent div that contains all blocks and year markers.
     We want it to be 90%, not 100% to make the cards not run against the sides */
+
 .timeline-stem {
   position: relative;
   width: 90%;
@@ -7,18 +8,20 @@
 }
 
 /* This is the vertical timeline that runs through the page */
+
 .timeline-stem::before {
   content: "";
   position: absolute;
   top: 0;
   height: 100%;
   width: 12px;
-  background: #c8c8c8;
+  background: white;
 }
 
 /*  Since the items alternate either left or right side, we need the
     titles to align differently.
     This is for the blocks on the RIGHT side! */
+
 .timeline-stem .timeline-item:nth-child(even) .timeline-box h1 {
   text-align: left;
 }
@@ -26,6 +29,7 @@
 /*  Since the items alternate either left or right side, we need the
     titles to align differently.
     This is for the blocks on the LEFT side! */
+
 .timeline-stem .timeline-item:nth-child(odd) .timeline-box h1 {
   text-align: right;
 }
@@ -34,6 +38,7 @@
     This is for the RIGHT side blocks and it pushes them further
     away from the left side to align to the RIGHT side of the
     timeline */
+
 .timeline-stem .timeline-item:nth-child(even) {
   flex-direction: row;
   left: 48.4%;
@@ -45,6 +50,7 @@
     timeline.
     We also need to reverse the row so that the arm comes
     AFTER (on the right side of) the item */
+
 .timeline-stem .timeline-item:nth-child(odd) {
   flex-direction: row-reverse;
   left: 9%;
@@ -54,6 +60,7 @@
     but the left-side arms need to push the item to the left and the right,
     to the right.
     This is for the blocks on the RIGHT side! */
+
 .timeline-stem .timeline-item:nth-child(even) .timeline-arm {
   padding-right: 1.4rem;
 }
@@ -62,23 +69,28 @@
     but the left-side arms need to push the item to the left and the right,
     to the right.
     This is for the blocks on the LEFT side! */
+
 .timeline-stem .timeline-item:nth-child(odd) .timeline-arm {
   padding-left: 1.4rem;
 }
+
 /*  We also need to flip the arms on the RIGHT side to match the arms on the
     right side */
+
 .timeline-stem .timeline-item:nth-child(even) .timeline-arm svg {
   transform: rotateY(180deg);
 }
 
 /*  We need to give the first item a little bit of distance from the year
     marker */
+
 .timeline-stem .timeline-item:nth-child(1) {
   padding-top: 2em;
 }
 
 /*  This is the class that brings in the LEFT side of timeline blocks
     If you need to slow down the animation, do it here! */
+
 .timeline-item .timeline-box--bounce-in {
   visibility: visible;
   -webkit-animation: cd-bounce-2 0.6s;
@@ -87,6 +99,7 @@
 
 /*  This is the class that brings in the RIGHT side of timeline blocks
     If you need to slow down the animation, do it here! */
+
 .timeline-item:nth-child(even) .timeline-box.timeline-box--bounce-in {
   -webkit-animation: cd-bounce-2-inverse 0.6s;
   animation: cd-bounce-2-inverse 0.6s;
@@ -163,6 +176,7 @@
 /*  These are mobile stylings
     1010px was chosen because that is the exact value the items start to
     mess with the sides */
+
 @media only screen and (max-width: 1010px) {
   .timeline-stem {
     display: flex;
@@ -217,7 +231,7 @@
     margin: auto;
     left: 50%;
     width: 12px;
-    background: #c8c8c8;
+    background: white;
   }
   .timeline-item::after {
     content: "";
@@ -226,6 +240,6 @@
     margin: auto;
     left: 50%;
     width: 12px;
-    background: #c8c8c8;
+    background: white;
   }
 }
