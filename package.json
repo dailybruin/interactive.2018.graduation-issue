@@ -32,7 +32,7 @@
     "@types/react-dom": "16.0.6",
     "@types/webpack-env": "1.13.6",
     "autoprefixer": "8.6.0",
-    "babel-preset-react-app": "3.1.1",
+    "babel-preset-react-app": "6.1.0",
     "glamor": "2.20.40",
     "glamorous": "4.13.1",
     "parcel-bundler": "1.8.1",
