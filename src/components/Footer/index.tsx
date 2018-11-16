@@ -15,7 +15,7 @@ export default function Footer() {
         </div>
         <div>
           Built with Suzy’s <span className="love">♥</span> in Kerckhoff 118 by
-          Dustin Newman, Nathan Smith and Michael Zhang.
+          Ashley Miao, Callista Wu, Dustin Newman, Nathan Smith and Michael Zhang.
         </div>
       </div>
     </footer>
